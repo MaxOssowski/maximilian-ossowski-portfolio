@@ -1,43 +1,56 @@
-# Astro Starter Kit: Minimal
+# Maximilian Ossowski – Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal portfolio website built with **Astro** and **Tailwind CSS**.  
+The site showcases my projects, technical background, and my transition from automation engineering and robotics into modern software development.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## About
 
-## 🚀 Project Structure
+I currently work as a **Senior RPA Developer in the banking sector** with over five years of experience designing automation systems.  
+My background includes **metrology engineering and industrial robotics programming**, and I am expanding into **modern frontend and full-stack software engineering**.
 
-Inside of your Astro project, you'll see the following folders and files:
+This portfolio serves as a place to document that transition and present the projects I build along the way.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Tech Stack
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Astro** – static site generation  
+- **Tailwind CSS** – utility-first styling  
+- **Node.js** – development environment  
+- **GitHub** – version control  
+- **Netlify** – deployment and hosting  
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Features
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Minimal, fast static website  
+- Responsive layout  
+- Project showcase section  
+- Email capture form  
+- Continuous deployment via Netlify  
 
-## 🧞 Commands
+## Development
 
-All commands are run from the root of the project, from a terminal:
+Install dependencies:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+`npm install`
 
-## 👀 Want to learn more?
+Start the development server:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+`npm run dev`
+
+The site will be available at:
+
+https://maximilian-ossowski.com
+
+## Build for Production
+
+`npm run build`
+
+The production build will be generated in the `dist` directory.
+
+## Deployment
+
+The site is automatically deployed through **Netlify**.  
+Every push to the `main` branch triggers a new build and deployment.
+
+## License
+
+This project is open source and available under the MIT License.

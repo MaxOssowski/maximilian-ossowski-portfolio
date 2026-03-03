@@ -1,0 +1,39 @@
+<section class="py-24 bg-black text-white text-center">
+  <div class="max-w-5xl mx-auto px-6 text-center"></div>
+  <h2 class="text-3xl font-bold mb-6">
+    Follow My Transition Into Software Engineering
+  </h2>
+
+  <p class="mb-8 text-gray-300">
+    Occasional updates about projects, learning progress, and AI exploration.
+  </p>
+
+  <form
+    name="newsletter"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    action="/thanks"
+    class="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto"
+  >
+    <input type="hidden" name="form-name" value="newsletter" />
+    <p class="hidden">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+
+    <input
+      type="email"
+      name="email"
+      required
+      placeholder="Your email"
+      class="px-4 py-3 rounded-lg text-black w-full"
+    />
+
+    <button
+      type="submit"
+      class="px-6 py-3 bg-white text-black rounded-lg font-semibold"
+    >
+      Subscribe
+    </button>
+  </form>
+</section>

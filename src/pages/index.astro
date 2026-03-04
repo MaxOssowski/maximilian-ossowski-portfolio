@@ -1,21 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Highlights from "../components/Highlights.astro";
+import Intro from "../components/Intro.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import About from "../components/About.astro";
-import Newsletter from "../components/Newsletter.astro";
+import Contact from "../components/Contact.astro";
 ---
 
-<Layout 
-  title="Maximilian Ossowski | Software Engineer"
-  description="Engineering mindset. Automation expertise. Transitioning into modern software engineering."
+<Layout
+  title="Maximilian Ossowski | AI Software Builder"
+  description="Portfolio of Maximilian Ossowski, Senior RPA Developer and AI software builder focused on automation, systems thinking, and high-performance software engineering."
+  canonicalPath="/"
 >
-  <Hero />
-  <Highlights />
-  <Projects />
-  <Skills />
-  <About />
-  <Newsletter />
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Primary">
+      <a class="brand" href="#hero">Maximilian Ossowski</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <Hero />
+    <Intro />
+    <Projects />
+    <Skills />
+    <About />
+    <Contact />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© {new Date().getFullYear()} Maximilian Ossowski. Built with Astro.</p>
+    </div>
+  </footer>
 </Layout>

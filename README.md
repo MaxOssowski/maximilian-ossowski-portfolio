@@ -1,56 +1,84 @@
-# Maximilian Ossowski – Portfolio Website
+# Maximilian Ossowski Portfolio (V1)
 
-Personal portfolio website built with **Astro** and **Tailwind CSS**.  
-The site showcases my projects, technical background, and my transition from automation engineering and robotics into modern software development.
+High-performance personal portfolio website built with Astro and semantic HTML/CSS.
 
-## About
+## Purpose
 
-I currently work as a **Senior RPA Developer in the banking sector** with over five years of experience designing automation systems.  
-My background includes **metrology engineering and industrial robotics programming**, and I am expanding into **modern frontend and full-stack software engineering**.
+This site presents Maximilian Ossowski as an AI software builder and automation engineer with a strong engineering mindset, systems thinking, and practical software delivery experience.
 
-This portfolio serves as a place to document that transition and present the projects I build along the way.
+## Stack
 
-## Tech Stack
+- Astro (static site generation)
+- Semantic HTML
+- Modular CSS (`global.css` + `components.css`)
+- No client-side JavaScript required for v1
 
-- **Astro** – static site generation  
-- **Tailwind CSS** – utility-first styling  
-- **Node.js** – development environment  
-- **GitHub** – version control  
-- **Netlify** – deployment and hosting  
-
-## Features
-
-- Minimal, fast static website  
-- Responsive layout  
-- Project showcase section  
-- Email capture form  
-- Continuous deployment via Netlify  
-
-## Development
+## Local Development
 
 Install dependencies:
 
-`npm install`
+```bash
+npm install
+```
 
-Start the development server:
+Run dev server:
 
-`npm run dev`
+```bash
+npm run dev
+```
 
-The site will be available at:
+Create production build:
 
-https://maximilian-ossowski.com
+```bash
+npm run build
+```
 
-## Build for Production
+Preview production build:
 
-`npm run build`
+```bash
+npm run preview
+```
 
-The production build will be generated in the `dist` directory.
+## Project Structure
 
-## Deployment
+```text
+public/
+  images/
+src/
+  components/
+    Hero.astro
+    Intro.astro
+    Projects.astro
+    Skills.astro
+    About.astro
+    Contact.astro
+  data/
+    projects.ts
+  layouts/
+    Layout.astro
+  pages/
+    index.astro
+  styles/
+    global.css
+    components.css
+```
 
-The site is automatically deployed through **Netlify**.  
-Every push to the `main` branch triggers a new build and deployment.
+## Updating Project Cards
 
-## License
+Edit `src/data/projects.ts`.
 
-This project is open source and available under the MIT License.
+Each project uses this type:
+
+- `title: string`
+- `description: string`
+- `technologies: string[]`
+- `githubUrl: string`
+
+The Projects section renders cards directly from this data source.
+
+## Quality Goals
+
+- Minimal JavaScript and static output for performance
+- Semantic HTML and clear heading hierarchy
+- Responsive layout for mobile/tablet/desktop
+- Clean, maintainable structure for future expansion

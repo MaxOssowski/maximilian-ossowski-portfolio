@@ -1,43 +1,84 @@
-# Astro Starter Kit: Minimal
+# Maximilian Ossowski Portfolio (V1)
 
-```sh
-npm create astro@latest -- --template minimal
+High-performance personal portfolio website built with Astro and semantic HTML/CSS.
+
+## Purpose
+
+This site presents Maximilian Ossowski as an AI software builder and automation engineer with a strong engineering mindset, systems thinking, and practical software delivery experience.
+
+## Stack
+
+- Astro (static site generation)
+- Semantic HTML
+- Modular CSS (`global.css` + `components.css`)
+- No client-side JavaScript required for v1
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Run dev server:
 
-## 🚀 Project Structure
+```bash
+npm run dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Create production build:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+public/
+  images/
+src/
+  components/
+    Hero.astro
+    Intro.astro
+    Projects.astro
+    Skills.astro
+    About.astro
+    Contact.astro
+  data/
+    projects.ts
+  layouts/
+    Layout.astro
+  pages/
+    index.astro
+  styles/
+    global.css
+    components.css
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Updating Project Cards
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Edit `src/data/projects.ts`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Each project uses this type:
 
-## 🧞 Commands
+- `title: string`
+- `description: string`
+- `technologies: string[]`
+- `githubUrl: string`
 
-All commands are run from the root of the project, from a terminal:
+The Projects section renders cards directly from this data source.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Quality Goals
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Minimal JavaScript and static output for performance
+- Semantic HTML and clear heading hierarchy
+- Responsive layout for mobile/tablet/desktop
+- Clean, maintainable structure for future expansion

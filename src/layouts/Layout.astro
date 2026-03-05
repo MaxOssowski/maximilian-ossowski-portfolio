@@ -1,6 +1,21 @@
 ---
 import "../styles/global.css";
-const { title, description } = Astro.props;
+import "../styles/components.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = "/",
+} = Astro.props as Props;
+
+const siteUrl = "https://maximilian-ossowski.com";
+const canonical = new URL(canonicalPath, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -10,14 +25,25 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- Basic SEO -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-  </head>
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
 
-  <body
-    class="bg-white text-neutral-900 antialiased selection:bg-black selection:text-white"
-  ></body><slot />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
 </html>

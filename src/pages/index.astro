@@ -6,12 +6,85 @@ import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
+import { projects } from "../data/projects";
+import {
+  CONTACT_EMAIL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_OG_IMAGE_PATH,
+  SITE_TITLE,
+  SITE_URL,
+  SOCIAL_LINKS,
+} from "../consts";
+
+const homepageUrl = new URL("/", SITE_URL).toString();
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: SITE_TITLE,
+    url: homepageUrl,
+    description: SITE_DESCRIPTION,
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    about: {
+      "@type": "Person",
+      name: SITE_NAME,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: SITE_NAME,
+    url: homepageUrl,
+    email: `mailto:${CONTACT_EMAIL}`,
+    jobTitle: "Senior RPA Developer",
+    description: SITE_DESCRIPTION,
+    sameAs: [...SOCIAL_LINKS],
+    knowsAbout: [
+      "AI software",
+      "Robotic process automation",
+      "Software engineering",
+      "Systems thinking",
+      "Automation architecture",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Selected projects",
+    itemListElement: projects.map((project, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareSourceCode",
+        name: project.title,
+        description: project.description,
+        codeRepository: project.githubUrl,
+        programmingLanguage: project.technologies,
+      },
+    })),
+  },
+];
 ---
 
 <Layout
-  title="Maximilian Ossowski | AI Software Builder"
-  description="Portfolio of Maximilian Ossowski, Senior RPA Developer and AI software builder focused on automation, systems thinking, and high-performance software engineering."
+  title={SITE_TITLE}
+  description={SITE_DESCRIPTION}
   canonicalPath="/"
+  ogImagePath={SITE_OG_IMAGE_PATH}
+  jsonLd={jsonLd}
 >
   <header class="site-header">
     <nav class="site-nav container" aria-label="Primary">

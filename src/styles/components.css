@@ -101,12 +101,23 @@
   align-items: start;
 }
 
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-item {
+  display: flex;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid #d9e2ec;
   border-radius: var(--radius);
   padding: 1rem;
   align-self: start;
+  width: 100%;
 }
 
 .card > * + * {
@@ -185,6 +196,10 @@
   padding: 0;
   display: grid;
   gap: 0.65rem;
+}
+
+.contact-address {
+  font-style: normal;
 }
 
 .contact-list li {

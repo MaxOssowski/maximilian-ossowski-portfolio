@@ -11,6 +11,9 @@
   --radius: 0.75rem;
   --space-section: clamp(3.5rem, 6vw, 6rem);
   --space-stack: clamp(0.8rem, 1.4vw, 1.1rem);
+  --font-body: "Inter", "Segoe UI", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: "Space Grotesk", "Inter", "Segoe UI", sans-serif;
+  --font-code: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {
@@ -23,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text);
   background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
@@ -48,9 +51,17 @@ button:focus-visible {
 h1,
 h2,
 h3 {
+  font-family: var(--font-heading);
   line-height: 1.2;
   margin: 0;
   letter-spacing: -0.01em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-code);
 }
 
 h1 {

@@ -5,6 +5,10 @@
   background: rgba(255, 255, 255, 0.82);
   border-bottom: 1px solid rgba(191, 208, 224, 0.9);
   z-index: 20;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .site-nav {
@@ -21,6 +25,9 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   position: relative;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .brand::after {
@@ -33,6 +40,19 @@
   background: linear-gradient(90deg, var(--accent), transparent 80%);
   opacity: 0.35;
   border-radius: 999px;
+  transform-origin: left center;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+.brand:hover::after {
+  opacity: 0.6;
+  transform: scaleX(1.08);
 }
 
 .nav-links {
@@ -48,10 +68,14 @@
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 600;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 .hero {
@@ -95,6 +119,16 @@
   text-decoration: none;
   border: 1px solid transparent;
   font-weight: 700;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 .button-primary {
@@ -112,6 +146,11 @@
   color: var(--text);
   border-color: var(--border);
   background: rgba(255, 255, 255, 0.75);
+}
+
+.button-secondary:hover {
+  border-color: rgba(15, 124, 130, 0.28);
+  box-shadow: 0 12px 26px rgba(15, 124, 130, 0.08);
 }
 
 .card-grid {
@@ -194,6 +233,13 @@
 .text-link {
   display: inline-block;
   font-weight: 700;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.text-link:hover {
+  transform: translateX(2px);
 }
 
 .skills-grid {
@@ -242,6 +288,16 @@
   border: 1px solid rgba(191, 208, 224, 0.85);
   border-radius: var(--radius);
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.contact-list li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 124, 130, 0.26);
+  box-shadow: 0 20px 38px rgba(15, 124, 130, 0.1);
 }
 
 .contact-list span {
